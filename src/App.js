@@ -1,11 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-import Newcomponent from "./Newcomponent";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import bootstrap from 'bootstrap';
+import './style.css';
+import Navbar from './Navbar';
 function App() {
   return (
     <div className="App">
-      <Newcomponent></Newcomponent>
-      <h1>Nueva app en react</h1>
+      <link rel="stylesheet" href="style.css"></link>
+      <Navbar/>
     </div>
   );
 }
