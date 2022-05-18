@@ -4,7 +4,7 @@ const Navbar = () => {
         <nav className='navbar navbar-expand-lg bg-black borde-top'>
           <div className='container-fluid'>
             <a className='navbar-brand mx-2' href=''>
-              <img className='mx-2 d-inline-block align-text-center' src={require('./assets/images/logos/deerlogo.png')} alt='deer crypto' width='55' height='55'/>
+              <img className='mx-2 d-inline-block align-text-center' src={require('../assets/images/logos/deerlogo.png')} alt='deer crypto' width='55' height='55'/>
             Deer Crypto SHOP
             </a>
             <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#navbarNavAltMarkup' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>
