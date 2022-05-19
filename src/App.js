@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <link rel="stylesheet" href="App.css"></link>
       <Navbar/>
-      <ItemListContainer greeting="ItemListContainer"/>
+      <ItemListContainer greeting="Este es el ItemListContainer"/>
     </div>
   );
 }
