@@ -3,7 +3,7 @@ import CartWidget from './CartWidget';
 const Navbar = () => {
     return (
         <header>
-        <nav className='navbar navbar-expand-lg bg-black borde-top'>
+        <nav className='navbar navbar-expand-lg bg-black ticker-shadow'>
           <div className='container-fluid'>
             <a className='navbar-brand mx-2' href=''>
               <img className='mx-2 d-inline-block align-text-center' src={require('../assets/images/logos/deerlogo.png')} alt='deer crypto' width='55' height='55'/>

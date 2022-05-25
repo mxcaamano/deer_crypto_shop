@@ -342,7 +342,7 @@ body footer span {
 }
 
 .bordes-neon {
-  box-shadow: 0 0 25px #2bf8bb;
+  box-shadow: 0 0 15px #2bf8bb;
 }
 
 ::-webkit-scrollbar {
@@ -359,6 +359,16 @@ body footer span {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #2bf8bb;
+}
+/*                                         */
+.productIMG {
+  height: 247px;
+  object-fit: cover;
+  object-position: 50% 45%;
+}
+
+.card{
+  min-height: 520px;
 }
 
 /*# sourceMappingURL=style.css.map */
