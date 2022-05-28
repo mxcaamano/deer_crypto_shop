@@ -6,10 +6,10 @@ import ItemListContainer from './components/ItemListContainer';
 
 function App() {
   return (
-    <div className="App bg-black">
+    <div className="App bg-black overflow-auto">
       <link rel="stylesheet" href="App.css"></link>
       <Navbar/>
-      <ItemListContainer greeting="ItemListContainer"/>
+      <ItemListContainer greeting="Tienda"/>
     </div>
   );
 }
