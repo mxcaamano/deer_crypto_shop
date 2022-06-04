@@ -2,11 +2,15 @@ import ItemCount from "./ItemCount";
 import loading from "../assets/images/loading.svg";
 import usdtlogo from '../assets/images/logos/usdtlogo.svg';
 import usdclogo from '../assets/images/logos/usdclogo.svg';
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const ItemDetail = ({item}) => {
-    
+    const [itemCount, setItemCount] = useState(0);
+
     const onAdd = (Cant) => {
         alert(`Se agregaron ${Cant} productos al carrito`);
+        setItemCount(Cant);
     }
     
     return(
@@ -22,7 +26,11 @@ const ItemDetail = ({item}) => {
                 <h2 className="display-7 fw-bold lh-1 mb-3">Precio: {item.price} U$S / <img width="35" height="35" src={usdtlogo} alt='Tether'/> / <img width="35" height="35" src={usdclogo} alt='USD Coin'/></h2>
                 <p className="lead">{item.description}</p>
                 <div className="d-grid gap-2 d-md-flex justify-content-md-start">
-                    <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>
+                {
+                    itemCount === 0
+                    ? <ItemCount stock={item.stock} initial={itemCount} onAdd={onAdd}/>
+                    : <Link to='/cart'><button type="button" className="mx-4 p-2 btn-view">Ir al Carrito</button></Link>
+                }
                 </div>
             </div>
         </div>
