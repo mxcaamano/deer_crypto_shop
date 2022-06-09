@@ -2,15 +2,18 @@ import ItemCount from "./ItemCount";
 import loading from "../assets/images/loading.svg";
 import usdtlogo from '../assets/images/logos/usdtlogo.svg';
 import usdclogo from '../assets/images/logos/usdclogo.svg';
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
+import { CartContext } from "./CartContext";
 
 const ItemDetail = ({item}) => {
     const [itemCount, setItemCount] = useState(0);
+    const context = useContext(CartContext);
 
     const onAdd = (Cant) => {
         alert(`Se agregaron ${Cant} productos al carrito`);
         setItemCount(Cant);
+        context.addItem(item,Cant);
     }
     
     return(
@@ -36,7 +39,7 @@ const ItemDetail = ({item}) => {
         </div>
     </div>
     :
-    <img className="d-block mx-lg-auto img-fluid mt-5" src={loading} width="150" height="150" alt='Loading Icon'/>
+    <img className="d-block mx-lg-auto img-fluid mt-5" src={loading} width="120" height="120" alt='Loading Icon'/>
     }
     </>
     )

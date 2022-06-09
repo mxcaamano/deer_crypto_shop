@@ -12,9 +12,9 @@ const ItemCount = ({ stock, initial, onAdd}) => {
         }
     return (
         <div className="container">
-        <button type="button" className="mb-1 py-1 btn btn-danger font-weight-bold text-white" onClick={dec}>-</button>
-        <span className="mx-3 fs-5">{Cant}</span>        
-        <button type="button" className="mb-1 py-1 btn btn-success font-weight-bold text-white" onClick={inc}>+</button>
+        <button type="button" className="mb-1 py-1 rounded-0 btn btn-success font-weight-bold text-white" onClick={inc}>+</button>
+        <span className="mx-3 fs-5">{Cant}</span>
+        <button type="button" className="mb-1 py-1 rounded-0 btn btn-danger font-weight-bold text-white" onClick={dec}>-</button>
         <button type="button" className="mx-4 p-2 btn-view" onClick={() => { stock >= 1 && onAdd(Cant)}}>Agregar al Carrito</button>
         </div>
     );

@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const Item = ({ id, title, price, pictureUrl}) => {
     return(
     <div className="col ">
-        <div className="card bordes-neon bg-black">
+        <div className="card bordes-neon bg-black pb-2">
             <img src={pictureUrl} className="bg-white productIMG" alt='Imagen de producto'/>
             <div className="card-body">
                 <h4 className="list-unstyled card-text">{title}</h4>

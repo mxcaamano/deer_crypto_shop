@@ -1,4 +1,5 @@
 import Item from "./Item";
+import loading from "../assets/images/loading.svg";
 
 const ItemList = ({items}) => {
     return(
@@ -6,6 +7,8 @@ const ItemList = ({items}) => {
         <div className="container">
           <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-5">
             {
+            items.length 
+            ?
             items.map(item => 
             <Item 
             key={item.id} 
@@ -15,6 +18,7 @@ const ItemList = ({items}) => {
             description={item.description}
             pictureUrl={item.pictureUrl}
             />)
+            : <img className="d-block mx-lg-auto mt-5" src={loading} width="120" height="120" alt='Loading Icon'/>
             }
           </div>
         </div>
