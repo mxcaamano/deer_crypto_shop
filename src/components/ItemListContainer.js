@@ -19,7 +19,7 @@ const ItemListContainer = ({greeting}) => {
     }, [id]);
     return (
         <>
-        <h4 className="container my-5 fs-1">{greeting}</h4>
+        <h4 className="container my-4 fs-1">{greeting}</h4>
         <ItemList items={Datos}/>
         </>
     );

@@ -16,12 +16,12 @@ const Navbar = () => {
             <div className='collapse navbar-collapse mx-3' id='navbarNavAltMarkup'>
               <div className='navbar-nav menu-anim mb-1'>
                 <Link to={'/category/1'} className='nav-link'>GPUs</Link>
-                <Link to={'/category/2'} className='nav-link' >Fuentes</Link>
-                <Link to={'/category/3'} className='nav-link' >Motherboards</Link>
-                <Link to={'/category/4'} className='nav-link' >Coolers</Link>
-                <Link to={'/category/5'} className='nav-link' >Risers</Link>                
-                <Link to={'/category/6'} className='nav-link' >Rigs Completos</Link>
-                <Link to={'/category/7'} className='nav-link' >ASICs</Link>
+                <Link to={'/category/2'} className='nav-link'>Fuentes</Link>
+                <Link to={'/category/3'} className='nav-link'>Motherboards</Link>
+                <Link to={'/category/4'} className='nav-link'>Coolers</Link>
+                <Link to={'/category/5'} className='nav-link'>Risers</Link>                
+                <Link to={'/category/6'} className='nav-link'>Rigs Completos</Link>
+                <Link to={'/category/7'} className='nav-link'>ASICs</Link>
               </div>
             </div>
             <CartWidget/>

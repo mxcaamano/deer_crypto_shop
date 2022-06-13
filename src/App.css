@@ -61,9 +61,9 @@
 }
 
 .borde-top {
-  -webkit-box-shadow: 0 -15px 20px -6px #88dbc2;
-  -moz-box-shadow: 0 -15px 20px -6px #88dbc2;
-  box-shadow: 0 -15px 20px -6px #88dbc2;
+  -webkit-box-shadow: 0 -15px 20px -6px #2bf8bb;
+  -moz-box-shadow: 0 -15px 20px -6px #2bf8bb;
+  box-shadow: 0 -15px 20px -6px #2bf8bb;
 }
 
 .deer-theme-dark .borde-top {
@@ -366,6 +366,10 @@ body footer span {
   object-fit: cover;
   object-position: 50% 45%;
 }
+.list-group-item{
+  color: #4eaa93;  
+}
+
 
 /* .card{
   min-height: 460px;

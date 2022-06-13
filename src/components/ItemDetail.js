@@ -19,7 +19,7 @@ const ItemDetail = ({item}) => {
     return(
         <>
     {item.pictureUrl ?
-    <div className="container col-xxl-8 px-3 py-3 mt-5 bordes-neon bg-black">
+    <div className="container col-xxl-8 px-3 py-3 my-5 bordes-neon bg-black">
         <div className="row flex-lg-row-reverse align-items-center g-5 py-3">
             <div className="col-10 col-sm-8 col-lg-6">
                 <img src={item.pictureUrl} className="d-block mx-lg-auto img-fluid" alt="Imagen producto" width="700" height="500" loading="lazy"/>
