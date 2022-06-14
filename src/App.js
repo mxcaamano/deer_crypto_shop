@@ -8,7 +8,6 @@ import ItemDetailContainer from './components/ItemDetailContainer';
 import Cart from './components/Cart';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import CartContextProvider from './components/CartContext';
-import Item from './components/Item';
 
 function App() {
   return (
