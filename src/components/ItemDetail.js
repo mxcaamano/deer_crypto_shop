@@ -27,6 +27,7 @@ const ItemDetail = ({item}) => {
             <div className="col-lg-6">
                 <h1 className="display-5 fw-bold lh-1 mb-3">{item.title}</h1>
                 <h2 className="display-7 fw-bold lh-1 mb-3">Precio: {item.price} U$S / <img width="35" height="35" src={usdtlogo} alt='Tether'/> / <img width="35" height="35" src={usdclogo} alt='USD Coin'/></h2>
+                <p className="lead">Disponibles: {item.stock}</p>
                 <p className="lead">{item.description}</p>
                 <div className="d-grid gap-2 d-md-flex justify-content-md-start">
                 {

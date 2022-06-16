@@ -3,9 +3,52 @@ import usdclogo from '../assets/images/logos/usdclogo.svg';
 import { Link } from 'react-router-dom';
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
+import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
+import db from '../utils/firebaseConfig';
 
 const Cart = () => {
     const context = useContext(CartContext);
+
+    const createOrder = () => {
+
+      const itemsForDB = context.cartList.map(item => ({
+        id: item.id,
+        title: item.title,
+        price: item.price,
+        quantity: item.quantity
+      }));
+    
+      let order = {
+        buyer: {
+          name: "Martin Caamaño",
+          email: "martinc@dominio.com",
+          phone: "+541145342210"
+        },
+        total: context.calcTotal(),
+        items: itemsForDB,
+        date: serverTimestamp()
+      };
+
+      const createOrderInFirestore = async () => {
+        const newOrderRef = doc(collection(db, "orders"));
+        await setDoc(newOrderRef, order);
+        return newOrderRef;
+      }
+    
+      createOrderInFirestore()
+        .then(result => alert('Tu orden fue creada, recuerda anotar el numero de orden: ' + result.id))
+        .catch(err => console.log(err));
+        
+        context.cartList.forEach(async (item) => {
+          const itemRef = doc(db, "products", item.id);
+          await updateDoc (itemRef, {
+            stock: increment(-item.quantity)
+          })
+        });
+
+        context.clear();
+    }
+
     return(
         <>
         {
@@ -91,7 +134,7 @@ const Cart = () => {
                             </li>
                           </ul>
                             <div className="d-flex justify-content-center my-2">
-                              <button type="button" className="rounded-0 btn btn-success font-weight-bold text-white m-2">Pagar</button>
+                              <button onClick={createOrder} type="button" className="rounded-0 btn btn-success font-weight-bold text-white m-2">Comprar</button>
                               <button type="button" className="rounded-0 btn btn-danger font-weight-bold text-white m-2" onClick={() => context.clear()}>Vaciar Carrito</button>
                             </div>
                         </div>
