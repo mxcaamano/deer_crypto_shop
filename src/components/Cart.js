@@ -1,12 +1,26 @@
 import usdtlogo from '../assets/images/logos/usdtlogo.svg';
 import usdclogo from '../assets/images/logos/usdclogo.svg';
 import { Link } from 'react-router-dom';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { CartContext } from "./CartContext";
 import { collection, doc, setDoc, serverTimestamp, updateDoc, increment } from "firebase/firestore";
 import db from '../utils/firebaseConfig';
+import { ToastContainer, toast, Flip } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Cart = () => {
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+
+    const inputCheck = () => {
+      return(
+      name.match(/^[a-z ,.'-]+$/i) && email.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/) && phone.match(/^[0-9]*$/)
+      ? createOrder() 
+      : toast.error('Complete los campos correctamente', {autoClose: 3000, theme: "colored", transition: Flip})
+      )   
+    }
+
     const context = useContext(CartContext);
 
     const createOrder = () => {
@@ -20,9 +34,9 @@ const Cart = () => {
     
       let order = {
         buyer: {
-          name: "Martin Caamaño",
-          email: "martinc@dominio.com",
-          phone: "+541145342210"
+          name: name,
+          email: email,
+          phone: ("+",phone)
         },
         total: context.calcTotal(),
         items: itemsForDB,
@@ -36,7 +50,7 @@ const Cart = () => {
       }
     
       createOrderInFirestore()
-        .then(result => alert('Tu orden fue creada, recuerda anotar el numero de orden: ' + result.id))
+        .then(result => toast.success('Tu orden fue creada!, recuerda anotar el numero de orden: ' + result.id, {position: "top-center", autoClose: false, theme: "colored", transition: Flip}))
         .catch(err => console.log(err));
         
         context.cartList.forEach(async (item) => {
@@ -63,9 +77,10 @@ const Cart = () => {
                   {
                     context.cartList.length === 0 
                     ? <>
+                    <ToastContainer />
                     <div className="card-body cart">
                       <div className="col-sm-12 empty-cart-cls text-center">
-                        <img className='mb-5 img-fluid mr-2' src={require("../assets/images/logos/cart.png")} width="130" height="120"/>
+                        <img className='mb-5 img-fluid mr-2' src={require("../assets/images/logos/cart.png")} width="130" height="120" alt='loading-icon'/>
                         <h3><strong>Tu Carrito está vacío!</strong></h3>
                         <h4 className='mb-3'>🤑 Ingresa a la tienda para añadir productos 🤑</h4>
                         <Link to='/'><button type="button" className="px-3 btn-view fs-5">Tienda</button></Link>
@@ -133,9 +148,13 @@ const Cart = () => {
                               <strong className='fs-5'>{context.calcTotal()}</strong>
                             </li>
                           </ul>
-                            <div className="d-flex justify-content-center my-2">
-                              <button onClick={createOrder} type="button" className="rounded-0 btn btn-success font-weight-bold text-white m-2">Comprar</button>
+                            <div className="my-2">
+                            <input className="form-control my-3 mt-4" name="name" label='Nombre' placeholder='John Doe' onChange={event => setName(event.target.value)}/>
+                            <input className="form-control my-3" name='email' label='Email' placeholder='xyz@ejemplo.com' type='email' onChange={event => setEmail(event.target.value)}/>
+                            <input className="form-control my-3" name="phone" label='Teléfono' type="tel" placeholder="5401145342210" onChange={event => setPhone(event.target.value)}></input>
+                              <button onClick={inputCheck} type="button" className="rounded-0 btn btn-success font-weight-bold text-white m-2">Comprar</button>
                               <button type="button" className="rounded-0 btn btn-danger font-weight-bold text-white m-2" onClick={() => context.clear()}>Vaciar Carrito</button>
+                              <ToastContainer/>
                             </div>
                         </div>
                       </div>}
@@ -148,4 +167,3 @@ const Cart = () => {
 }
 
 export default Cart;
-

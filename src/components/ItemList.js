@@ -15,10 +15,14 @@ const ItemList = ({items}) => {
             id={item.id} 
             title={item.title} 
             price={item.price}
+            category={item.category}
             description={item.description}
             pictureUrl={item.pictureUrl}
             />)
-            : <img className="d-block mx-lg-auto mt-5" src={loading} width="120" height="120" alt='Loading Icon'/>
+            : <div className="container">
+                <img className="d-block mx-lg-auto mt-5" src={loading} width="120" height="120" alt='Loading Icon'/>
+                <h4 className="d-block mx-lg-auto mt-5 text-center">Buscando Productos...</h4>
+              </div>
             }
           </div>
         </div>

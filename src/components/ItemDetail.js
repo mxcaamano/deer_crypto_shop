@@ -5,20 +5,21 @@ import usdclogo from '../assets/images/logos/usdclogo.svg';
 import { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { CartContext } from "./CartContext";
+import { ToastContainer } from "react-toastify";
 
 const ItemDetail = ({item}) => {
     const [itemCount, setItemCount] = useState(0);
     const context = useContext(CartContext);
 
     const onAdd = (Cant) => {
-        alert(`Se agregaron ${Cant} productos al carrito`);
         setItemCount(Cant);
         context.addItem(item,Cant);
     }
     
     return(
         <>
-    {item.pictureUrl ?
+        <ToastContainer />
+    {item && item.pictureUrl ?
     <div className="container col-xxl-8 px-3 py-3 my-5 bordes-neon bg-black">
         <div className="row flex-lg-row-reverse align-items-center g-5 py-3">
             <div className="col-10 col-sm-8 col-lg-6">
@@ -39,8 +40,7 @@ const ItemDetail = ({item}) => {
             </div>
         </div>
     </div>
-    :
-    <img className="d-block mx-lg-auto img-fluid mt-5" src={loading} width="120" height="120" alt='Loading Icon'/>
+    : <img className="d-block mx-lg-auto img-fluid mt-5" src={loading} width="120" height="120" alt='Loading Icon'/>
     }
     </>
     )

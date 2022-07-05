@@ -1,4 +1,5 @@
 import { createContext, useState } from "react";
+import { toast, Flip } from 'react-toastify';
 
 export const CartContext = createContext();
 
@@ -7,9 +8,25 @@ const CartContextProvider = ({children}) => {
 
     const addItem = (item,quantity) => {
         const cartitem = cartList.find((i) => i.id === item.id ) 
-        cartitem 
-        ? cartitem.quantity += quantity
-        : setCartList([...cartList, {...item, quantity:quantity}]);
+        if(cartitem){
+            if(cartitem.quantity >= cartitem.stock){
+                cartitem.quantity = cartitem.stock
+                toast.warn('Ya has agregado el maximo de stock de éste articulo a tu carrito', {position: "top-center", autoClose: 3000, theme: "colored", transition: Flip})
+            }
+            else{
+                cartitem.quantity += quantity
+                toast.success(`Se agregaron ${quantity} productos al carrito`, {position: "top-center", autoClose: 3000, theme: "colored", transition: Flip});
+                if(cartitem.quantity >= cartitem.stock)
+                {
+                    cartitem.quantity = cartitem.stock;
+                    toast.warn('Ya has agregado el maximo de stock de éste articulo a tu carrito', {position: "top-center",autoClose: 3000, theme: "colored", transition: Flip})
+                }                 
+            }
+        }
+        else{
+            toast.success(`Se agregaron ${quantity} productos al carrito`, {position: "top-center", autoClose: 3000, theme: "colored", transition: Flip});
+            setCartList([...cartList, {...item, quantity:quantity}]);
+        }
     }
 
     const removeItem = (idItem) =>

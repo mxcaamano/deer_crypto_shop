@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# DeerCrypto Shop
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+_Hola!_ 👋😄
 
-## Available Scripts
+_Este repositorio consiste en la realizacion de un proyecto final para el curso de ReactJS_
 
-In the project directory, you can run:
+_En este caso tuve como objetivo desarrollar un e-commerce dentro de una Single-Page Application_
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Comenzando 🚀
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+_El repositorio se puede_ [forkear](https://github.com/mxcaamano/deer_crypto_shop/fork) _para copiarlo en tu repositorio de GitHub._
 
-### `npm test`
+_También es posible descargar el archivo **.Zip**, descomprimirlo, tenerlo en tu computadora, modificarlo con el IDE que desees._
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+_Para probarlo sugiero que ingreses a **https://Direcciondelproyecto.dominio**_
 
-### `npm run build`
+_No obstante, también podés ejecutar la aplicacion web segun lo mencionado en **Deployment**_
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Pre-requisitos 📋
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+_Para ejecutarla necesitarás:_
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Navegador compatible con ReactJS 18.1.0
 
-### `npm run eject`
+_Y en caso de realizar Deployment:_
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+* Entorno de desarrollo integrado de tu preferencia (Ej. [Visual Studio Code](https://code.visualstudio.com/))
+* [NodeJS](https://nodejs.org/)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Deployment 📦
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+_Existen métodos varios para realizar deployment del contenido de éste repositorio. En caso de querer realizarlo sugiero pasar vista y seguir las instrucciones siguiente Link:_
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+https://create-react-app.dev/docs/deployment
 
-## Learn More
+## Construido con 🛠️
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+_Herramientas que utilizadas para crear tu proyecto_
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* [ReactJS](https://reactjs.org/)
+* [HTML](https://developer.mozilla.org/es/docs/Web/HTML)
+* [CSS](https://developer.mozilla.org/es/docs/Web/CSS)
+* [Javascript](https://developer.mozilla.org/es/docs/Web/JavaScript)
+* [NodeJS](https://nodejs.org/)
+* [react-toastify](https://www.npmjs.com/package/react-toastify)
 
-### Code Splitting
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Autor ✒️
 
-### Analyzing the Bundle Size
+* **Martin Xavier Caamaño** | [GitHub](https://github.com/mxcaamano) | [LinkedIn](https://www.linkedin.com/in/mart%C3%ADn-xavier-caama%C3%B1o-b60432224)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Agradecimientos 🎁 🥳
 
-### Making a Progressive Web App
+A los profesores de [Coderhouse](https://www.linkedin.com/school/coderhouse/):
+* **Alex Marin Mendez** (ReactJS) | [GitHub](https://github.com/alexmarinmendez) | [LinkedIn](https://www.linkedin.com/in/alexmarinmendez/)
+* **Nicolas Seguro** (Desarrollo Web) | [GitHub](https://github.com/NicolasSeguro) | [LinkedIn](https://www.linkedin.com/in/nicolas-seguro/)
+* **Santiago Avila** (Javascript) | [GitHub](https://github.com/santiagoaviladev) | [LinkedIn](https://www.linkedin.com/in/santiagoavila/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

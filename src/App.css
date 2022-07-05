@@ -370,6 +370,21 @@ body footer span {
   color: #4eaa93;  
 }
 
+.btn-dis {
+  border: 2px solid #424746;
+  color: #6f7775;
+  margin: 0.5em;
+  font: inherit;
+  line-height: 1;
+  transition: 0.25s;
+  text-decoration: none;
+  background-color: black;
+  padding: 0.25rem 2.5rem;
+  margin: 0.2em;
+  font-size: 0.95rem;
+  pointer-events: none;
+}
+
 
 /* .card{
   min-height: 460px;
