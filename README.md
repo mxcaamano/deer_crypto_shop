@@ -13,7 +13,7 @@ _El repositorio se puede_ [forkear](https://github.com/mxcaamano/deer_crypto_sho
 
 _También es posible descargar el archivo **.Zip**, descomprimirlo, tenerlo en tu computadora, modificarlo con el IDE que desees._
 
-_Para probarlo sugiero que ingreses a **https://Direcciondelproyecto.dominio**_
+_Para probarlo sugiero que ingreses a **https://deercryptoshop.netlify.app/**_
 
 _No obstante, también podés ejecutar la aplicacion web segun lo mencionado en **Deployment**_
 
